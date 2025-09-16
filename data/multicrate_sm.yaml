@@ -1,0 +1,6 @@
+train: s3://my-yolo-dataset/images/train/
+val: s3://my-yolo-dataset/images/val/
+test: s3://my-yolo-dataset/images/test/
+
+names: 
+  0: crate
