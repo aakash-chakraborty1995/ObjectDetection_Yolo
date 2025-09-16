@@ -13,5 +13,5 @@ model = YOLO("yolo11s-obb.yaml").load("yolo11s.pt")  # build from YAML and trans
 # Train the model
 results = model.train(data="multicrate.yaml", epochs=100, imgsz=640, task = 'obb')
 
-model.save("best_MCD_small.pt")
+model.save("yolo11s-obb.pt")
 model.export(format="onnx")

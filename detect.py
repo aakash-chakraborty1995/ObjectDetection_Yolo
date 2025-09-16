@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load a trained model (for demo use pre-trained YOLOv8n)
-model = YOLO("best_MCD_small.pt")
+model = YOLO("yolo11s-obb.pt")
 
 # Run inference on a sample image
 results = model("./data/images/val/image_1235.jpg")
