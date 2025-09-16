@@ -16,11 +16,11 @@ estimator = PyTorch(
     framework_version="1.13",
     py_version="py39",
     instance_count=1,
-    instance_type="ml.t3.medium",  # GPU
+    instance_type="t2.micro",  # GPU
     output_path=output_s3,
     hyperparameters={
         "epochs": 2,
-        "imgsz": 640
+        "imgsz": 320
     }
 )
 
