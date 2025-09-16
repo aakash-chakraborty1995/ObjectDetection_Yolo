@@ -1,7 +1,7 @@
 import sagemaker
 from sagemaker.pytorch import PyTorch
 
-role = "arn:aws:iam::aws:policy/AmazonSageMakerFullAccess"  # attach AmazonSageMakerFullAccess + S3 permissions
+role = "arn:aws:iam::016873651001:role/SageMaker-YOLO-Role"  # attach AmazonSageMakerFullAccess + S3 permissions
 sess = sagemaker.Session()
 
 # Define S3 locations
