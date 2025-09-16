@@ -7,7 +7,7 @@ on:
 
 jobs:
   retrain:
-    runs-on: windows-latest   # 👈 switched to Windows runner
+    runs-on: windows-2025   # 👈 switched to Windows runner
 
     steps:
       - name: Checkout repo

@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: windows-latest   # 👈 switch from ubuntu to windows
+    runs-on: windows-2025   # 👈 switch from ubuntu to windows
 
     steps:
       - name: Checkout repo
