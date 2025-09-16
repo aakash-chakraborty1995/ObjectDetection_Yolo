@@ -1,0 +1,33 @@
+name: YOLO Retrain (Nightly - Windows)
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # runs daily at 2 AM UTC
+  workflow_dispatch:       # manual trigger
+
+jobs:
+  retrain:
+    runs-on: windows-latest   # 👈 switched to Windows runner
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Retrain YOLO model
+        run: python train.py   # 👈 no need for pipe
+
+      - name: Upload trained weights
+        uses: actions/upload-artifact@v4
+        with:
+          name: yolo-weights
+          path: runs/detect/train/weights/best.pt
