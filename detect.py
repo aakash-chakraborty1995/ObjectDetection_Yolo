@@ -1,11 +1,12 @@
 from ultralytics import YOLO
 
-# Load a trained model (for demo use pre-trained YOLOv8n)
-model = YOLO("yolo11s-obb.pt")
+# Load trained model
+model = YOLO("yolo11s-mcd-obb.pt")
 
-# Run inference on a sample image
+# Run inference
 results = model("./data/images/val/image_1235.jpg")
 
-# Print detections
+# Print results
 for r in results:
     print(r.boxes)  # bounding boxes
+
