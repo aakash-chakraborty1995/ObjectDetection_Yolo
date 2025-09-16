@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload dataset to S3
         run: |
-          aws s3 sync .\data\ s3://mcdyolobucket/ --recursive
+          aws s3 sync .\data\ s3://mcdyolobucket/ --delete
 
       - name: Launch SageMaker training job
         run: python .\trainer_sm.py
