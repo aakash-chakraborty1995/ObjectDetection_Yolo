@@ -31,12 +31,12 @@ jobs:
       - name: Copy best weights
         run: |
           mkdir -p models
-          copy runs\detect\train\weights\best.pt models\yolo11s-mcd-obb.pt
+          copy runs\detect\train\weights\best.pt models\best_mcd_obb.pt
 
       - name: Commit and push updated weights
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add models/yolo11s-mcd-obb.pt
+          git add models/best_mcd_obb.pt
           git commit -m "Update YOLO weights (nightly retrain)"
           git push origin main
